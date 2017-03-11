@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
  * @author Dylan
  * @version 1.00 6/27/2016 11:08
  */
-public class NativeExceptionHandling {
+public class NaiveExceptionHandling {
     public static void main(String[] args) {
         try {
             ExecutorService exec = Executors.newCachedThreadPool();
