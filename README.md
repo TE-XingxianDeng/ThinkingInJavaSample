@@ -1,99 +1,29 @@
 # ThinkingInJavaSample
 Sample code of book Thinking In Java
 
-- [Introduction](#Introduction)
-- [Introduction to Objects](#Introduction-to-Objects)
-- Everything Is an Object
-- Operators
-- controlling Execution
-- Initialization & Cleanup
-- Access Control
-- Reusing Classes
-- Polymorphism
-- Interfaces
-- Inner Classes
-- Holding Your Objects
-- Error Handing with Exceptions
-- Strings
-- Type Information
-- Generics
-- Arrays
-- Containers in Depth
-- I/O
-- Enumerated Types
-- Annotations
-- [Concurrency](#Concurrency)
-  * The many face of concurrency
-    - Faster execution
-    - Improving code design
-  * Basic threading
-    - Defining tasks
-    - The Thread class
-    - Using Executors
-    - Producing return values from tasks
-    - Sleeping
-    - Priority
-    - Yielding
-    - Daemon threads
-    - Coding variations
-    - Terminology
-    - Joining a thread
-    - Creating responsive user interfaces
-    - Thread groups
-    - Catching exceptions
-  * Sharing resources
-    - Improperly accessing resources
-    - Resolving shared resource contention
-    - Synchronizing the EvenGenerator
-    - Using explicit Lock objects
-    - Atomicity and volatility
-    - Atomic classes
-    - Critical sections
-    - Synchronizing on other objects
-    - Thread local storage
-  * Terminating tasks
-    - The ornamental garden
-    - Terminating when blocked
-      * Thread states
-      * Becoming blocked
-    - Interruption
-    - Blocked by a mutex
-    - Checking for an interrupt
-  * Cooperation between tasks
-    - wait() and notifyAll()
-      * Missed Signals
-    - notify() vs. notifyAll()
-    - Producers and consumers
-    - Using explicit Lock and Condition objects
-    - Producer-consumers and queues
-    - BlockingQueues of toast
-    - Using pipes for I/O between tasks
-  * Deadlock
-  * New library components
-    - CountDownLatch
-      * Library thread safety
-    - CyclicBarrier
-    - DelayQueue
-    - PriorityBlockingQueue
-    - The greenhouse controller with ScheduledExecutor
-    - Semaphore
-    - Exchanger
-  * Simulation
-    - Bank teller simulation
-    - The restaurant simulation
-    - Distributing work
-  * Performance tuning
-    - Comparing mutex technologies
-    - Lock-free containers
-      * Performance issues
-      * Comparing Map implementations
-    - Optimistic locking
-    - ReadWriteLocks
-  * Active objects
-  * Summary
-    - Further reading
-- Graphical User Interfaces
-
+- [Introduction](#introduction)
+- [Introduction to Objects](#introduction-to-objects)
+- [Everything Is an Object](#everything-is-an-object)
+- [Operators](#operators)
+- [Controlling Execution](#controlling-execution)
+- [Initialization & Cleanup](#initialization--cleanup)
+- [Access Control](#access-control)
+- [Reusing Classes](#reusing-classes)
+- [Polymorphism](#polymorphism)
+- [Interfaces](#interfaces)
+- [Inner Classes](#inner-classes)
+- [Holding Your Objects](#holding-your-objects)
+- [Error Handing with Exceptions](#error-handing-with-exceptions)
+- [Strings](#strings)
+- [Type Information](#type-information)
+- [Generics](#generics)
+- [Arrays](#arrays)
+- [Containers in Depth](#containers-in-depth)
+- [I/O](#io)
+- [Enumerated Types](#enumerated-types)
+- [Annotations](#annotations)
+- [Concurrency](#concurrency)
+- [Graphical User Interfaces](#graphical-user-interfaces)
 
 <hr />
 
@@ -101,7 +31,7 @@ Sample code of book Thinking In Java
 ## Introduction to Objects
 ## Everything Is an Object
 ## Operators
-## controlling Execution
+## Controlling Execution
 ## Initialization & Cleanup
 ## Access Control
 ## Reusing Classes
