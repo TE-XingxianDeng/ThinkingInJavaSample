@@ -6,8 +6,8 @@ import java.nio.CharBuffer;
 import static net.mindview.util.Print.print;
 
 /**
- * @author dylan
- * @version 1.00 17-1-18 下午7:31
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class UsingBuffers {
     private static void symmetricScramble(CharBuffer buffer) {

@@ -7,10 +7,10 @@ import java.nio.channels.FileChannel;
 
 /**
  * Copying a file using channels and buffers
- * {Args: ChannelCopy.java test.txt}
+ * {Args: src/main/java/io/ChannelCopy.java target/classes/io/test.txt}
  *
- * @author Dylan
- * @version 1.00 1/18/2017
+ * @author Dylan.Deng
+ * @version 16-9-14
  */
 public class ChannelCopy {
     private static final int BSIZE = 1024;

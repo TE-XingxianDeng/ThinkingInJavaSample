@@ -8,20 +8,21 @@ import static net.mindview.util.Print.print;
 import static net.mindview.util.Print.printnb;
 
 /**
- * Creating a very large file using mapping.
+ * Creating a very large file using mapping
  *
- * @author dylan
- * @version 1.00 17-1-18 下午7:38
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class LargeMappedFiles {
-    static int length = 0x8ffffff;  // 128MB
+    static int length = 0x8FFFFFFF;  // 128M
 
     public static void main(String[] args) throws Exception {
-        MappedByteBuffer out = new RandomAccessFile("test.dat", "rw").getChannel()
+        MappedByteBuffer out = new RandomAccessFile(
+                "target/classes/io/test.dat", "rw").getChannel()
                 .map(FileChannel.MapMode.READ_WRITE, 0, length);
         for (int i = 0; i < length; i++)
             out.put((byte) 'x');
-        print("Finished writing");
+        print("Finished Writing");
         for (int i = length / 2; i < length / 2 + 6; i++)
             printnb((char) out.get(i));
     }

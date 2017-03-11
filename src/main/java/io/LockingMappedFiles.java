@@ -10,20 +10,19 @@ import java.nio.channels.FileLock;
 /**
  * Locking portions of a mapped file.
  *
- * @author dylan
- * @version 1.00 17-1-18 下午7:50
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class LockingMappedFiles {
-    static final int LENGTH = 0x8ffffff;  // 128MB
+    static final int LENGTH = 0x8FFFFFF; // 128MB;
     static FileChannel fc;
 
-    public static void main(String[] args) throws IOException {
-        fc = new RandomAccessFile("test.dat", "rw").getChannel();
-        MappedByteBuffer out =
-                fc.map(FileChannel.MapMode.READ_WRITE, 0, LENGTH);
+    public static void main(String[] args) throws Exception {
+        fc = new RandomAccessFile("target/classes/io/test.dat", "rw").getChannel();
+        MappedByteBuffer out = fc.map(FileChannel.MapMode.READ_WRITE, 0, LENGTH);
         for (int i = 0; i < LENGTH; i++)
             out.put((byte) 'x');
-        new LockAndModify(out, 0, LENGTH / 3);
+        new LockAndModify(out, 0, 0 + LENGTH / 3);
         new LockAndModify(out, LENGTH / 2, LENGTH / 2 + LENGTH / 4);
     }
 
@@ -43,7 +42,7 @@ public class LockingMappedFiles {
         @Override
         public void run() {
             try {
-                // Exclusive lock with no overlap;
+                // Exclusive lock with no overlap:
                 FileLock fl = fc.lock(start, end, false);
                 System.out.println("Locked: " + start + " to " + end);
                 // Perform modification:

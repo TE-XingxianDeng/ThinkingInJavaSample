@@ -8,10 +8,10 @@ import static net.mindview.util.Print.print;
 import static net.mindview.util.Print.printnb;
 
 /**
- * Displays Charsets and aliases
+ * Displays CharSets and aliases
  *
- * @author Dylan
- * @version 1.00 1/18/2017
+ * @author Dylan.Deng
+ * @version 16-9-14
  */
 public class AvailableCharSets {
     public static void main(String[] args) {

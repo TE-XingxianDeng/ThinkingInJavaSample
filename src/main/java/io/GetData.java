@@ -8,8 +8,8 @@ import static net.mindview.util.Print.printnb;
 /**
  * Getting different representations from a ByteBuffer
  *
- * @author Dylan
- * @version 1.00 1/18/2017
+ * @author Dylan.Deng
+ * @version 1.00 2016-09-15
  */
 public class GetData {
     private static final int BSIZE = 1024;
@@ -20,10 +20,10 @@ public class GetData {
         int i = 0;
         while (i++ < bb.limit())
             if (bb.get() != 0)
-                print("nonzore");
+                print("nonzero");
         print("i = " + i);
         bb.rewind();
-        // Store and read a char array;
+        // Store and read a char array:
         bb.asCharBuffer().put("Howdy!");
         char c;
         while ((c = bb.getChar()) != 0)
@@ -38,8 +38,8 @@ public class GetData {
         bb.asIntBuffer().put(99471142);
         print(bb.getInt());
         bb.rewind();
-        // Store and read a long;
-        bb.asLongBuffer().put(99471142);
+        // Store and read a long:
+        bb.asLongBuffer().put(99471142L);
         print(bb.getLong());
         bb.rewind();
         // Store and read a float:

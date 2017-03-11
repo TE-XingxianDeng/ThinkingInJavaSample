@@ -5,12 +5,13 @@ import java.nio.channels.FileLock;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author dylan
- * @version 1.00 17-1-18 下午7:48
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class FileLocking {
     public static void main(String[] args) throws Exception {
-        FileOutputStream fos = new FileOutputStream("file.txt");
+        FileOutputStream fos = new FileOutputStream(
+                "target/classes/io/file.txt");
         FileLock fl = fos.getChannel().tryLock();
         if (fl != null) {
             System.out.println("Locked File");

@@ -5,11 +5,10 @@ import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * @author dylan
- * @version 1.00 17-1-18 下午7:43
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class MappedIO {
-
     private static int numOfInts = 4000000;
     private static int numOfUbuffInts = 200000;
 
@@ -35,25 +34,25 @@ public class MappedIO {
         public abstract void test() throws IOException;
     }
 
-
     private static Tester[] tests = {
             new Tester("Stream Write") {
                 public void test() throws IOException {
                     DataOutputStream dos = new DataOutputStream(
                             new BufferedOutputStream(
-                                    new FileOutputStream(new File("temp.tmp"))));
+                                    new FileOutputStream(
+                                            new File("target/classes/io/temp.tmp"))));
                     for (int i = 0; i < numOfInts; i++)
                         dos.writeInt(i);
                     dos.close();
                 }
             },
             new Tester("Mapped Write") {
+                @Override
                 public void test() throws IOException {
                     FileChannel fc =
-                            new RandomAccessFile("temp.tmp", "rw")
+                            new RandomAccessFile("target/classes/io/temp.tmp", "rw")
                                     .getChannel();
-                    IntBuffer ib = fc.map(
-                            FileChannel.MapMode.READ_WRITE, 0, fc.size())
+                    IntBuffer ib = fc.map(FileChannel.MapMode.READ_WRITE, 0, fc.size())
                             .asIntBuffer();
                     for (int i = 0; i < numOfInts; i++)
                         ib.put(i);
@@ -61,19 +60,21 @@ public class MappedIO {
                 }
             },
             new Tester("Stream Read") {
+                @Override
                 public void test() throws IOException {
                     DataInputStream dis = new DataInputStream(
                             new BufferedInputStream(
-                                    new FileInputStream("temp.tmp")));
+                                    new FileInputStream("target/classes/io/temp.tmp")));
                     for (int i = 0; i < numOfInts; i++)
                         dis.readInt();
                     dis.close();
                 }
             },
             new Tester("Mapped Read") {
+                @Override
                 public void test() throws IOException {
                     FileChannel fc = new FileInputStream(
-                            new File("temp.tmp")).getChannel();
+                            new File("target/classes/io/temp.tmp")).getChannel();
                     IntBuffer ib = fc.map(
                             FileChannel.MapMode.READ_ONLY, 0, fc.size())
                             .asIntBuffer();
@@ -83,9 +84,10 @@ public class MappedIO {
                 }
             },
             new Tester("Stream Read/Write") {
+                @Override
                 public void test() throws IOException {
                     RandomAccessFile raf = new RandomAccessFile(
-                            new File("temp.tmp"), "rw");
+                            new File("target/classes/io/temp.tmp"), "rw");
                     raf.writeInt(1);
                     for (int i = 0; i < numOfUbuffInts; i++) {
                         raf.seek(raf.length() - 4);
@@ -95,9 +97,11 @@ public class MappedIO {
                 }
             },
             new Tester("Mapped Read/Write") {
+                @Override
                 public void test() throws IOException {
                     FileChannel fc = new RandomAccessFile(
-                            new File("temp.tmp"), "rw").getChannel();
+                            new File("target/classes/io/temp.tmp"), "rw")
+                            .getChannel();
                     IntBuffer ib = fc.map(
                             FileChannel.MapMode.READ_WRITE, 0, fc.size())
                             .asIntBuffer();

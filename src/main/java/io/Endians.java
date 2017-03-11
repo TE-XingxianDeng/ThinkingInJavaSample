@@ -9,8 +9,8 @@ import static net.mindview.util.Print.print;
 /**
  * Endian differences and data storage.
  *
- * @author dylan
- * @version 1.00 17-1-18 下午7:26
+ * @author Dylan.Deng
+ * @version 1.00 09-15-2016
  */
 public class Endians {
     public static void main(String[] args) {
