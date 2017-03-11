@@ -1,7 +1,6 @@
 # ThinkingInJavaSample
 Sample code of book Thinking In Java
 
-- [Introduction](#introduction)
 - [Introduction to Objects](#introduction-to-objects)
 - [Everything Is an Object](#everything-is-an-object)
 - [Operators](#operators)
@@ -27,9 +26,61 @@ Sample code of book Thinking In Java
 
 <hr />
 
-## Introduction
 ## Introduction to Objects
+### The progress of abstraction
+### An object has an interface
+### An object provides services
+### The hidden implementation
+### Reusing the implementation
+### Inheritance
+#### Is-a vs. is-like-a relationships
+### Interchangeable objects with polymorphism
+### The singly rooted hierarchy
+### Containers
+#### Parameterized types(generics)
+### Object creation $ lifetime
+### Exception handling: dealing with errors
+### Concurrent programming
+### Java and the Internet
+#### What is the Web?
+#### Client-side programming
+#### Server-side programming
+### Summary
 ## Everything Is an Object
+### You manipulate objects with references
+### You must create all the objects
+#### Where storage lives
+#### Special case: primitive types
+#### Arrays in Java
+### You never need to destory an object
+#### Scoping
+#### Scope of objects
+### Creating new data types: class
+#### Fields and methods
+### Methods, arguments, and return values
+#### The argument list
+### Building a Java program
+#### Name visibility
+#### Using other components
+#### The static keyword
+### Your first Java program
+- [object/HelloDate.java](src/main/java/object/HelloDate.java)
+- [object/ShowProperties.java](src/main/java/object/ShowProperties.java)
+
+#### Compiling and running
+### Comments and embedded documentation
+#### Comment documentation
+#### Syntax
+- [object/Documentation1.java](src/main/java/object/Documentation1.java)
+
+#### Embedded HTML
+#### Some example tags
+#### Documentation example
+- [object/HelloDate.java](src/main/java/object/HelloDate.java)
+
+### Coding style
+### Summary
+### Exercises
 ## Operators
 ## Controlling Execution
 ## Initialization & Cleanup
