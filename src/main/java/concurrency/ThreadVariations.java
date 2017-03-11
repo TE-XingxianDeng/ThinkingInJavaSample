@@ -2,10 +2,22 @@ package concurrency;
 
 import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.print;
+/**
+ * @author Dylan
+ * @version 1.00 6/25/2016 13:05
+ */
+public class ThreadVariations {
+    public static void main(String[] args) {
+        new InnerThread1("InnerThread1");
+        new InnerThread2("InnerThread2");
+        new InnerRunnable1("InnerRunnable1");
+        new InnerRunnable2("InnerRunnable2");
+        new ThreadMethod("ThreadMethod").runTask();
+    }
+}
 
 /**
- * Using a named inner class
+ * Using a named inner class:
  */
 class InnerThread1 {
     private int countDown = 5;
@@ -21,12 +33,12 @@ class InnerThread1 {
         public void run() {
             try {
                 while (true) {
-                    print(this);
+                    System.out.println(this);
                     if (--countDown == 0) return;
                     sleep(10);
                 }
             } catch (InterruptedException e) {
-                print("interruped");
+                System.out.println("Interrupted");
             }
         }
 
@@ -42,7 +54,7 @@ class InnerThread1 {
 }
 
 /**
- * Using an anonymous inner class;
+ * Using an anonymous inner class:
  */
 class InnerThread2 {
     private int countDown = 5;
@@ -54,13 +66,12 @@ class InnerThread2 {
             public void run() {
                 try {
                     while (true) {
-
-                        print(this);
+                        System.out.println(this);
                         if (--countDown == 0) return;
                         sleep(10);
                     }
                 } catch (InterruptedException e) {
-                    print("sleep() interrupted");
+                    System.out.println("sleep() interrupted");
                 }
             }
 
@@ -74,7 +85,7 @@ class InnerThread2 {
 }
 
 /**
- * Using a named Runnable implementation;
+ * Using a named Runnable implementation
  */
 class InnerRunnable1 {
     private int countDown = 5;
@@ -92,12 +103,12 @@ class InnerRunnable1 {
         public void run() {
             try {
                 while (true) {
-                    print(this);
+                    System.out.println(this);
                     if (--countDown == 0) return;
                     TimeUnit.MILLISECONDS.sleep(10);
                 }
             } catch (InterruptedException e) {
-                print("sleep() interrupted");
+                System.out.println("sleep() interrupted");
             }
         }
 
@@ -113,7 +124,7 @@ class InnerRunnable1 {
 }
 
 /**
- * Using an anonymous Runnable implementation
+ * Using an anonymous Runnable implementation:
  */
 class InnerRunnable2 {
     private int countDown = 5;
@@ -125,24 +136,26 @@ class InnerRunnable2 {
             public void run() {
                 try {
                     while (true) {
-                        print(this);
+                        System.out.println(this);
                         if (--countDown == 0) return;
                         TimeUnit.MILLISECONDS.sleep(10);
                     }
                 } catch (InterruptedException e) {
-                    print("sleep() interrupted");
+                    System.out.println("sleep() interrupted");
                 }
             }
 
             @Override
             public String toString() {
-                return Thread.currentThread().getName() + ": " + countDown;
+                return Thread.currentThread().getName() +
+                        ": " + countDown;
             }
         }, name);
         t.start();
     }
 }
 
+// A separate method to run some code as a task:
 class ThreadMethod {
     private int countDown = 5;
     private Thread t;
@@ -155,16 +168,15 @@ class ThreadMethod {
     public void runTask() {
         if (t == null) {
             t = new Thread(name) {
-                @Override
                 public void run() {
                     try {
                         while (true) {
-                            print(this);
+                            System.out.println(this);
                             if (--countDown == 0) return;
                             sleep(10);
                         }
                     } catch (InterruptedException e) {
-                        print("sleep() interrupted");
+                        System.out.println("sleep() interrupted");
                     }
                 }
 
@@ -175,19 +187,5 @@ class ThreadMethod {
             };
             t.start();
         }
-    }
-}
-
-/**
- * @author dylan
- * @version 1.00 3/10/17 1:28 PM
- */
-public class ThreadVariations {
-    public static void main(String[] args) {
-        new InnerThread1("InnerThread1");
-        new InnerThread2("InnerThread2");
-        new InnerRunnable1("InnerRunnable");
-        new InnerRunnable2("InnerRunnable");
-        new ThreadMethod("ThreadMethod").runTask();
     }
 }

@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author dylan
- * @version 1.00 3/10/17 3:02 PM
+ * @author Dylan
+ * @version 1.00 6/27/2016 11:23
  */
 public class EvenChecker implements Runnable {
     private IntGenerator generator;
@@ -21,15 +21,13 @@ public class EvenChecker implements Runnable {
         while (!generator.isCanceled()) {
             int val = generator.next();
             if (val % 2 != 0) {
-                System.out.println(val + " not even!");
+                System.out.println(val + " not even");
                 generator.cancel();  // Cancels all EvenCheckers
             }
         }
     }
 
-    /**
-     * Test any type of IntGenerator
-     */
+    // Test any type of IntGenerator:
     public static void test(IntGenerator gp, int count) {
         System.out.println("Press Control-C to exit");
         ExecutorService exec = Executors.newCachedThreadPool();
@@ -38,9 +36,7 @@ public class EvenChecker implements Runnable {
         exec.shutdown();
     }
 
-    /**
-     * Default value for count
-     */
+    // Default value for count;
     public static void test(IntGenerator gp) {
         test(gp, 10);
     }

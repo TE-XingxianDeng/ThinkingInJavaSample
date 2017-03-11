@@ -1,25 +1,21 @@
+// Daemon threads don't prevent the program from ending.
 package concurrency;
 
 import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.print;
-
 /**
- * Daemon threads don't prevent the program from ending.
- *
- * @author dylan
- * @version 1.00 2/12/17 8:09 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 12:23
  */
 public class SimpleDaemons implements Runnable {
-    @Override
     public void run() {
         try {
             while (true) {
                 TimeUnit.MILLISECONDS.sleep(100);
-                print(Thread.currentThread() + " " + this);
+                System.out.println(Thread.currentThread() + " " + this);
             }
         } catch (InterruptedException e) {
-            print("sleep() interrupted");
+            System.out.println("sleep() interrupted");
         }
     }
 
@@ -29,7 +25,7 @@ public class SimpleDaemons implements Runnable {
             daemon.setDaemon(true);  // Must call before start()
             daemon.start();
         }
-        print("All daemons started");
+        System.out.println("All daemons started");
         TimeUnit.MILLISECONDS.sleep(175);
     }
 }

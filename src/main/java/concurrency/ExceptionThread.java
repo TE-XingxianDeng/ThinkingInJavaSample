@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author dylan
- * @version 1.00 3/10/17 2:45 PM
+ * @author Dylan
+ * @version 1.00 6/27/2016 11:06
  */
 public class ExceptionThread implements Runnable {
     @Override

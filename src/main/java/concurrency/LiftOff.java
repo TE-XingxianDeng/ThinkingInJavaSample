@@ -1,11 +1,11 @@
 package concurrency;
 
 /**
- * @author dylan
- * @version 1.00 2/12/17 7:29 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 13:42
  */
 public class LiftOff implements Runnable {
-    protected int countDown = 10;  // Default
+    protected int countDown = 10;   // Default
     private static int taskCount = 0;
     private final int id = taskCount++;
 
@@ -18,12 +18,12 @@ public class LiftOff implements Runnable {
 
     public String status() {
         return "#" + id + "(" +
-                (countDown > 0 ? countDown : "LiftOff!") + "), ";
+                (countDown > 0 ? countDown : "LiftOff!") + "). ";
     }
 
     public void run() {
         while (countDown-- > 0) {
-            System.out.print(status());
+            System.out.println(status());
             Thread.yield();
         }
     }

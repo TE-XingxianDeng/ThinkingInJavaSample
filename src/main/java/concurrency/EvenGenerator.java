@@ -1,17 +1,17 @@
 package concurrency;
 
 /**
- * @author dylan
- * @version 1.00 3/10/17 3:10 PM
+ * @author Dylan
+ * @version 1.00 6/27/2016 11:31
  */
 public class EvenGenerator extends IntGenerator {
-    private int currentEventValue = 0;
+    private int currentEvenValue = 0;
 
     @Override
     public int next() {
-        ++currentEventValue;  // Danger point here!
-        ++currentEventValue;
-        return currentEventValue;
+        ++currentEvenValue;  // Danger point here!
+        ++currentEvenValue;
+        return currentEvenValue;
     }
 
     public static void main(String[] args) {

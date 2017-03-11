@@ -1,10 +1,9 @@
+// A Runnable containing its own driver Thread
 package concurrency;
 
 /**
- * A Runnable containing its own driver Thread.
- *
- * @author dylan
- * @version 1.00 3/10/17 11:26 AM
+ * @author Dylan
+ * @version 1.00 6/25/2016 13:01
  */
 public class SelfManaged implements Runnable {
     private int countDown = 5;
@@ -17,13 +16,13 @@ public class SelfManaged implements Runnable {
     @Override
     public String toString() {
         return Thread.currentThread().getName() +
-                "(" + countDown + "). ";
+                "(" + countDown + "),";
     }
 
     @Override
     public void run() {
         while (true) {
-            System.out.println(this);
+            System.out.print(this);
             if (--countDown == 0)
                 return;
         }

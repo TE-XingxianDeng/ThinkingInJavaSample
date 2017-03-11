@@ -5,20 +5,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Calling sleep() to pause for a while
- *
- * @author dylan
- * @version 1.00 2/12/17 7:51 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 14:28
  */
 public class SleepingTask extends LiftOff {
-    @Override
     public void run() {
         try {
             while (countDown-- > 0) {
-                System.out.print(status());
-                // Old-style
+                System.out.println(status());
+                // Old-style:
                 // Thread.sleep(100);
-                // Java SE5/6-style
+                // Java SE5/6-style:
                 TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {

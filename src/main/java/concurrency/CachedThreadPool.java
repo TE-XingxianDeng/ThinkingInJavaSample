@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author dylan
- * @version 1.00 2/12/17 7:40 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 14:10
  */
 public class CachedThreadPool {
     public static void main(String[] args) {

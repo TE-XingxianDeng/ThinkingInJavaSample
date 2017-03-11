@@ -1,16 +1,15 @@
 package concurrency;
 
 /**
- * @author dylan
- * @version 1.00 3/10/17 3:12 PM
+ * @author Dylan
+ * @version 1.00 6/27/2016 20:09
  */
 public class SynchronizedEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
-
     @Override
     public synchronized int next() {
         ++currentEvenValue;
-        Thread.yield();
+        Thread.yield();  // Cause failure faster
         ++currentEvenValue;
         return currentEvenValue;
     }

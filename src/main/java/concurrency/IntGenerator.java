@@ -1,17 +1,15 @@
 package concurrency;
 
 /**
- * @author dylan
- * @version 1.00 3/10/17 3:00 PM
+ * @author Dylan
+ * @version 1.00 6/27/2016 11:21
  */
 public abstract class IntGenerator {
     private volatile boolean canceled = false;
 
     public abstract int next();
 
-    /**
-     * Allow this to be canceled
-     */
+    // Allow this to be cancaled:
     public void cancel() {
         canceled = true;
     }

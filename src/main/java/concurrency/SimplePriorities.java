@@ -2,12 +2,11 @@ package concurrency;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
- * shows the use of thread priorities
- *
- * @author dylan
- * @version 1.00 2/12/17 7:55 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 12:13
  */
 public class SimplePriorities implements Runnable {
     private int countDown = 5;
@@ -27,7 +26,7 @@ public class SimplePriorities implements Runnable {
     public void run() {
         Thread.currentThread().setPriority(priority);
         while (true) {
-            // An expensive, interruptable operation:
+            // An expensive, interruptable operation;
             for (int i = 1; i < 100000; i++) {
                 d += (Math.PI + Math.E) / (double) i;
                 if (i % 1000 == 0)
@@ -41,8 +40,10 @@ public class SimplePriorities implements Runnable {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++)
-            exec.execute(new SimplePriorities(Thread.MIN_PRIORITY));
-        exec.execute(new SimplePriorities(Thread.MAX_PRIORITY));
+            exec.execute(
+                    new SimplePriorities(Thread.MIN_PRIORITY));
+        exec.execute(
+                new SimplePriorities(Thread.MAX_PRIORITY));
         exec.shutdown();
     }
 }

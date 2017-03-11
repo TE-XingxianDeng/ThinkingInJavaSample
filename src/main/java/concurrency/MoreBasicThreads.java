@@ -1,10 +1,8 @@
 package concurrency;
 
 /**
- * Adding more threads
- *
- * @author dylan
- * @version 1.00 2/12/17 7:35 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 14:06
  */
 public class MoreBasicThreads {
     public static void main(String[] args) {

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.concurrent.*;
 
 /**
- * @author dylan
- * @version 1.00 2/12/17 7:45 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 14:18
  */
 public class CallableDemo {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class CallableDemo {
             results.add(exec.submit(new TaskWithResult(i)));
         for (Future<String> fs : results)
             try {
-                // get() blocks until completion:
+                // get() blocks until completion;
                 System.out.println(fs.get());
             } catch (InterruptedException e) {
                 System.out.println(e);
@@ -36,7 +36,7 @@ class TaskWithResult implements Callable<String> {
     }
 
     @Override
-    public String call() throws Exception {
+    public String call() {
         return "result of TaskWithResult " + id;
     }
 }

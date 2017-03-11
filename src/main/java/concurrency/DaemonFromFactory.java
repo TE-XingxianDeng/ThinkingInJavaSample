@@ -1,16 +1,14 @@
 package concurrency;
 
+import net.mindview.util.DaemonThreadFactory;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static net.mindview.util.Print.print;
-
 /**
- * Using a Thread Factory to create daemons
- *
- * @author dylan
- * @version 1.00 2/12/17 8:47 PM
+ * @author Dylan
+ * @version 1.00 6/25/2016 12:29
  */
 public class DaemonFromFactory implements Runnable {
     @Override
@@ -18,10 +16,10 @@ public class DaemonFromFactory implements Runnable {
         try {
             while (true) {
                 TimeUnit.MILLISECONDS.sleep(100);
-                print(Thread.currentThread() + " " + this);
+                System.out.println(Thread.currentThread() + " " + this);
             }
         } catch (InterruptedException e) {
-            print("Interruped");
+            System.out.println("Interrupted");
         }
     }
 
@@ -30,7 +28,7 @@ public class DaemonFromFactory implements Runnable {
                 new DaemonThreadFactory());
         for (int i = 0; i < 10; i++)
             exec.execute(new DaemonFromFactory());
-        print("All daemons started");
-        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println("All daemons started");
+        TimeUnit.MILLISECONDS.sleep(500);   // Run for a while
     }
 }
