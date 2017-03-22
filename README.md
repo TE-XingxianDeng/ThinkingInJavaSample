@@ -295,5 +295,18 @@ Sample code of book Thinking In Java
 
 ### Summary
 #### Further reading
-
 ## Graphical User Interfaces
+### Applets
+### Swing basics
+- [gui/HelloSwing.java](src/main/java/gui/HelloSwing.java)
+- [gui/HelloLabel.java](src/main/java/gui/HelloLabel.java)
+- [gui/SubmitLabelManipulationTask.java](src/main/java/gui/SubmitLabelManipulationTask.java)
+- [gui/SubmitSwingProgram.java](src/main/java/gui/SubmitSwingProgram.java)
+
+#### A display framework
+- [net/mindview/util/SwingConsole.java](src/main/java/net/mindview/util/SwingConsole.java)
+
+### Making a button
+- [gui/Button1.java](src/main/java/gui/Button1.java)
+- [gui/Button2.java](src/main/java/gui/Button2.java)
+- [gui/Button2b.java](src/main/java/gui/Button2b.java)
