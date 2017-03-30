@@ -6,7 +6,8 @@ import java.io.PrintWriter;
 import java.io.StringReader;
 
 /**
- * Created by dylan on 16-9-14.
+ * @author dylan
+ * @version 1.00 16-9-14
  */
 public class FileOutputShortcut {
     static String file = "target/classes/io/FileOutputShortcut.out";

@@ -7,6 +7,13 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenLocal()
+    mavenCentral()
+}
+
+javadoc {
+    options.docEncoding = "UTF-8"
+    options.encoding = "UTF-8"
+    options.charSet = "UTF-8"
 }
 
 dependencies {
