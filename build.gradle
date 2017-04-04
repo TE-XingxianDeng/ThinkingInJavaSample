@@ -10,6 +10,18 @@ repositories {
     mavenCentral()
 }
 
+task jnlpFileChooserJar(type: Jar, dependsOn: classes) {
+    from('build/classes/main/gui/jnlp')
+    into('gui/jnlp')
+    archiveName 'jnlpfilechooser.jar'
+}
+
+task utilJar(type: Jar, dependsOn: classes) {
+    from('build/classes/main/net/mindview/util')
+    into('net/mindview/util')
+    baseName 'util'
+}
+
 javadoc {
     options.docEncoding = "UTF-8"
     options.encoding = "UTF-8"
@@ -19,4 +31,5 @@ javadoc {
 dependencies {
     compile group: 'nu.xom', name: 'xom', version: '1.2.10'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile files(System.getProperty("java.home") + "/lib/javaws.jar")
 }
