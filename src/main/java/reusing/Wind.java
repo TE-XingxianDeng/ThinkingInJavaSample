@@ -1,7 +1,7 @@
 package reusing;
 
 /**
- * Inheritance & upcasting.
+ * Inheritance &amp; upcasting.
  *
  * @author Dylan
  * @version 1.00 3/30/2017

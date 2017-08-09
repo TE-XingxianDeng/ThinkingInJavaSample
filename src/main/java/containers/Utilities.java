@@ -51,7 +51,7 @@ public class Utilities {
                 Collections.frequency(list, "pop"));
         List<String> dups = Collections.nCopies(3, "smap");
         print("dups: " + dups);
-        print("‘list’ disjoint ‘dups’?: " +
+        print("'list' disjoint 'dups'?: " +
                 Collections.disjoint(list, dups));
         // Getting an old-style Enumeration:
         Enumeration<String> e = Collections.enumeration(dups);
