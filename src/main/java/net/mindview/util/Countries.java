@@ -218,7 +218,7 @@ public class Countries {
         }
     }
 
-    // Create a partial map of ‘size’ countries:
+    // Create a partial map of 'size' countries:
     static Map<String, String> select(final int size) {
         return new FlyweightMap() {
             public Set<Map.Entry<String, String>> entrySet() {

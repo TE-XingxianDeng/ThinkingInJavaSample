@@ -27,4 +27,4 @@ final class Dinosaur {
     }
 }
 //! class Further extends Dinosaur {}
-// error: Cannot extend final class ‘Dinosaur’
+// error: Cannot extend final class 'Dinosaur'
